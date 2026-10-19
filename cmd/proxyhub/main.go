@@ -230,9 +230,10 @@ func run(ctx context.Context, rootLog **zap.Logger) error {
 		}
 
 		info := api.Proxy{
-			ID:      id,
-			Version: clientVersion,
-			Started: time.Now().Unix(),
+			ID:       id,
+			Version:  clientVersion,
+			Started:  time.Now().Unix(),
+			ClientIP: c.ClientIP(),
 		}
 
 		proxy, err := proxyhub.NewProxy(ctx, id, session, func(proxy *proxyhub.Proxy) (proxyhub.ProxyHandler, error) {
