@@ -13,4 +13,5 @@ message Proxy {
     int32 port = 3;
     int64 started = 4;
     EgressWhitelist egressWhitelist = 5;
+    string clientIp = 6;
 }
